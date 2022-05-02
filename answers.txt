@@ -1,0 +1,22 @@
+Q1:What is a smart contract? How are they deployed? You should be able to describe how a smart contract is deployed and the necessary steps. 
+A: Smart contracts are self executing code that exist on an address on a blockchain. Smart contractds are deployed by submitting a transaction to the blockchain (similary to interacting with one, although this call is unique). 
+steps; 1. Compile your smart contract from solidity/your langauge of choice into bytecode 
+       2. Send a transaction including your bytecode and other starting parameters to the null address (0x0...) to commit a contract creation transaction to the mempool 
+      
+Q2: What is gas? Why is gas optimization such a big focus when building smart contracts?
+A: Gas is a symbolic economic unit denoting the computational load of executing some functionality on the ethereum network. Gas is paid in the native currency of ethereum (Eth).
+   You can think of Gas as the equivalent as paying your cloud compute bill on web2 cloud providers. Gas optimization is highly important because users pay gas whenever they 
+   interact with your contracts and the amount they pay is proportional to how efficent your functions and contract are overall. Therefore, its vital to the user experience that 
+   your contract is hihgly gas-optimized. 
+
+Q3: What is a hash? Why do people use hashing to hide information?
+A:  A hash is the result (output) of an lossy encyption algorithim, a hash function. These functions are very quick and work in almost O(1) time no matter the size of the file passed into them 
+    and then heavily scramble the data provided to them and return (traditionally) a 32 or 64 length hex string which uniquly identifies the input provided to the function. This output is referred to as a "hash". 
+    Hashes are powerful because they uniquely identify a piece of output due to a unique property of hash funcions. When the output changes even slightly the output changes dramatically. 
+    This also makes it very difficult to orchestrate "collisions" of two inputs having the same output. Hashes are used to hide information because they can show you have some information without revealing what that 
+    information actually is. 
+    
+Q4: How would you prove to a colorblind person that two different colored objects are actually of different colors? You could check out Avi Wigderson talk about a similar problem here. 
+A:  I would tell the colorblind person to go off in secret (where I could not see) and put one of the balls in either his left or right hand into a box. He could then call me 
+    and reveal the ball under the box to me and ask if this ball was the one in his left or right hand before. I could give him the answer because I could see the color of the balls, if they were the same color 
+    I would have no way of knowing which one he was showing to me. By repeating this experiment multiple times I could convince him the balls where a different color. 
